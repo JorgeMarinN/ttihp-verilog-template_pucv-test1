@@ -7,7 +7,7 @@ project:
   language:     "Verilog"
   clock_hz:     27000000                       
 
-  tiles: "6x2"        
+  tiles: "2x2"        
 
   top_module:  "tt_um_pucv_3lfcc"
 
