@@ -1,56 +1,66 @@
 # Tiny Tapeout project information
 project:
-  title:        "PUCV Test 1"      # Project title
-  author:       "Jorge Marin"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Test 1 for PUCV workshop"      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "aaaaaaa"
+  author:       "aaaaaaa"
+  discord:      "aaaaaaa"
+  description:  "aaaaaaa"
+  language:     "Verilog"
+  clock_hz:     27000000                       
 
-  # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "6x2"        
 
-  # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_jmarin_test1"
+  top_module:  "tt_um_pucv_3lfcc"
 
-  # List your project's source files here.
-  # Source files must be in ./src and you must list each source file separately, one per line.
-  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "project.v"
+    - "fcc_core.v"
+    - "fcc_fixpt.v"
+    - "ps_pwm.v"
+    - "signal_generator_0phase.v"
+    - "signal_generator_180phase.v"
+    - "comparator.v"
+    - "dead_time_generator.v"
+    - "timer_control.v"
+    - "adc.v"
+    - "i2c.v"
+    - "uart.v"
+    - "screen.v"
+    - "text.v"
+    - "font_rom.v"
+    - "toDec.v"
+    - "div_u32.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "na"
-  ui[1]: "na"
-  ui[2]: "na"
-  ui[3]: "na"
-  ui[4]: "na"
-  ui[5]: "na"
-  ui[6]: "na"
-  ui[7]: "na"
+  ui[0]: "UART_RX"
+  ui[1]: "SCL_OD (0=push-pull, 1=open-drain)"
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
 
   # Outputs
-  uo[0]: "out0"
-  uo[1]: "out1"
-  uo[2]: "out2"
-  uo[3]: "out3"
-  uo[4]: "out4"
-  uo[5]: "out5"
-  uo[6]: "out6"
-  uo[7]: "out7"
+  uo[0]: "PWM0 (PMOS1)"
+  uo[1]: "PWM1 (PMOS2)"
+  uo[2]: "PWM2 (NMOS1)"
+  uo[3]: "PWM3 (NMOS2)"
+  uo[4]: "PWM4 (fijo a 1)"
+  uo[5]: "PWM5 (heartbeat 0.5 Hz)"
+  uo[6]: "PWM6 (fijo a 0)"
+  uo[7]: "PWM7 (fijo a 0)"
 
   # Bidirectional pins
-  uio[0]: "na"
-  uio[1]: "na"
-  uio[2]: "na"
-  uio[3]: "na"
-  uio[4]: "na"
-  uio[5]: "na"
-  uio[6]: "na"
-  uio[7]: "na"
+  uio[0]: "SDA1 - ADS1115 flying cap (open drain)"
+  uio[1]: "SDA2 - ADS1115 Vout (open drain)"
+  uio[2]: "SCL - reloj I2C comun a los dos ADC"
+  uio[3]: "OLED SCLK"
+  uio[4]: "OLED SDIN"
+  uio[5]: "OLED CS"
+  uio[6]: "OLED DC"
+  uio[7]: "OLED RES"
 
 # Do not change!
 yaml_version: 6
